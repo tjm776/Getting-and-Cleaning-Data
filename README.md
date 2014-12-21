@@ -29,4 +29,4 @@ The run_analysis.R script is used to perform the following functions.
 
 Additional Information:
 
-See the CodeBook.MD file for information on the data files, variables, and any how the data was cleaned.
+See the CodeBook file for information on the data files, variables, and any how the data was cleaned.
