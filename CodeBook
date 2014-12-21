@@ -1,0 +1,85 @@
+Data:
+
+The data was collected by a group of 30 volunteers.  Each person did six activities while wearing a Samsung Galaxy S 
+smartphone.  The activities were walking, walking upstairs, downstairs, sitting, standing and laying.  The 
+accelerometers and gyroscope in the smartphones captured linear acceleration and angular velocity on 3 axis.  
+The subjects were divided into two groups.  70% collected the training data and the remaining 30% generated the 
+test data.
+
+Files:
+
+The data collected is contained in the following files.
+1.	“features_info.txt”:  Shows information about the variables used on the feature vector.
+2.	“features.txt”:  List of all features.
+3.	“activity_labels.txt”:  Links the class labels with their activity name.
+4.	“train/X_train.txt”:  Training set.
+5.	“train/y_train.txt”:  Training labels.
+6.	“train/subject_train.txt”:  Each row identifies the subject who performed the activity.  
+This file represents 70% of the 30 subjects.
+7.	“test/X_test.txt”:  Test set.
+8.	“test/y_test.txt”:  Test labels.
+9.	“test/subject_test.txt”:  Each row identifies the subject who performed the activity.  
+This file represents 70% of the 30 subjects
+
+Variables:
+
+Each record provides the following variable.
+1.	Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+2.	Triaxial Angular velocity from the gyroscope.
+3.	A 561-feature vector with time and frequency domain variables.
+4.	Its activity label.
+5.	An identifier of the subject who carried out the experiment.
+
+Study Design:
+
+Read the “activity_labels.txt” file to get the id and name of the 6 activities.  Put into the “activity_labels” 
+dataframe with column names “activity_id” and “activity_name”.
+
+Read the “features.txt” file to get the id and name for the 561 features.  Put into the “features” dataframe with 
+column names “feature_id” and “feature_name”.
+
+Read the “X_test.txt” file to get the 2947 observations from the test subjects for the 561 features.  Put into the 
+“test_data” dataframe.  Create column names from the “feature_name” in the “feature” dataframe.
+
+Read the “y_test.txt” file to get the 2947 activity id’s.  Put into the “test_labels” dataframe with column name 
+“activity_id”.
+
+Read the “subject_test.txt” file to get the 2947 subject id’s.  Put into the “test_subject”dataframe with column name 
+“subject_id”.
+
+Put 2947 feature observations (“test_data”), labels (“test_labels”) and subjects (“test_subject”) into one dataframe 
+called “test_final”.
+
+Read the “X_train.txt” file to get the 7352 observations from the train subjects for the 561 features.  Put into the 
+“train_data” dataframe.  Create column names from the “feature_name” in the “feature” dataframe.
+
+Read the “y_train.txt” file to get the 7352 activity id’s.  Put into the “train_labels” dataframe with column name 
+“activity_id”.
+
+Read the “subject_train.txt” file to get the 7352 subject id’s.  Put into the “train_subject”dataframe with column 
+name “subject_id”.
+
+Put 7352 feature observations (“train_data”), labels (“train_labels”) and subjects (“train_subject”) into one 
+dataframe called “train_final”.
+
+Combine the test (“test_final”) and train (“train_final”) data into one data set called merge_data.
+
+Find which features measure only the mean and standard deviation of a measurement.  Put these 86 features in 
+“find_mean_std”.
+
+Put all the mean and standard deviation measurements in one data set called “mean_std_data”.
+
+Add the “activity_id” and “subject_data” from “merge_data” to the mean and standard deviations data in “mean_std_data” 
+to create data set “final_data”.
+
+Merge the activity labels from the “activity_lables” dataframe with the “final_data” dataframe.  Call the new 
+dataframe “all_data”.
+
+Create the “tidy_data” dataframe with the average of each variable for each activity and each subject.  Accomplish this 
+by aggregating the feature measurements in “all_data” by “subject_id” and “activity_name” using the mean function.
+
+Convert “tidy_data” so the mean of each feature for each activity done by each subject is in a row.  Put into dataframe 
+“melted_data” with a column names "subject_id", "activity_name", "feature_name" and "mean".  Use the melt function on 
+“tidy_data” to accomplish this conversion.
+
+Write the “melted_data” dataframe to a text file called data set to a text file "tidy_data.txt".
